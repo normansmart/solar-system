@@ -23,7 +23,8 @@ code {
 
 
 .planetpicker-container{
-  width: 30vw;
+  width: 10vw;
+
   background-color: aqua;
   float: left;
 
@@ -38,6 +39,7 @@ width: 200px;
 height: 55px;
 
 transition: width .3s;
+float: left;
 
 
 }
@@ -73,12 +75,12 @@ transition: width .3s;
 
 
 .solar-system{
-  width: 100vh;
+  width: 50vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
 float: right;
 
 

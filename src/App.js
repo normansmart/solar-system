@@ -2,7 +2,7 @@
 import Sun from './Sun';
 import Orbit from './planets';
 import './App.css';
-import PlanetInfo from './planetinfo';
+import PlanetInfo from './planetinforpage';
 import React from 'react';
 
 

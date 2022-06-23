@@ -1,11 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState} from 'react';
-
-
-
-
-
-
+import Buttons from './Buttons';
 
 
 
@@ -13,38 +8,47 @@ import { useState} from 'react';
 
 function PlanetInfo() {
 
-  const [currentPlanet, setcurrentPlanet] = useState([{}])
+  const [Planets, setPlanets] = useState([{}])
+
+  const [selectedPlanet, setSelecetdPlanet] = useState([{}])
 
 
 
+useEffect(() => {
 
-
-const fethAPlanet = () => {
   fetch('https://api.le-systeme-solaire.net/rest/bodies')
     .then(response => response.json())
     .then((json) => {
      
       const planets = json.bodies.filter(
-        (item) => {
-        
-           return item.isPlanet == true 
-           
-        }
-
-       
-      )
+        (item) =>  item.isPlanet == true)
    
-      setcurrentPlanet(planets)
+      setPlanets(planets)
 
     })
 
+    .catch(error => { console.log (error)})
+
+})
+
+
+
+
+
+
+
+console.log(Planets)
+
+
+
+function handleClick(planet) {
+
+  setSelecetdPlanet(planet)
+  
 }
 
 
 
-fethAPlanet()
-
-console.log(currentPlanet)
 
 
 
@@ -62,6 +66,9 @@ console.log(currentPlanet)
 
   return (
     <div>
+
+    <Buttons planets={Planets} />
+
 
 
     </div>
